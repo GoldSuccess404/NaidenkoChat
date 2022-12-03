@@ -52,7 +52,7 @@ void client1::clicked_registration()
 /*отправка данных на сервер при регестрации*/
 void client1::reg_datas_to_Server(QString name, QString login, QString password)
 {
-    socket->connectToHost("192.168.0.107", 3223);
+    socket->connectToHost("127.0.0.1", 3223);
     data.clear();
     QDataStream out(&data, QIODevice::WriteOnly);
     out << reg1 << login << password << name;
@@ -63,7 +63,7 @@ void client1::reg_datas_to_Server(QString name, QString login, QString password)
 /*отправка данных на сервер при входе*/
 void client1::entry_datas_to_Server()
 {
-    socket->connectToHost("192.168.0.107", 3223);
+    socket->connectToHost("127.0.0.1", 3223);
     data.clear();
     QDataStream out(&data, QIODevice::WriteOnly);
     out << entry1 << login->text() << password->text();
